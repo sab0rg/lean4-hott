@@ -17,14 +17,12 @@ package workspace where
 /-
 Shared libraries
 -/
-
 lean_lib Core where
   srcDir := "libraries/core"
 
 /-
 Executable applications
 -/
-
 lean_exe app where
   root := `Main.Main
   srcDir := "projects/app"
