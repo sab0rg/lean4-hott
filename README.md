@@ -1,3 +1,22 @@
+# Contribution guide #
+- Apps live in projects
+- Reusable code lives in libraries
+- Apps can import libraries
+- Libraries should not import apps
+- Never move lean-toolchain from repo root
+- Always run lake build inside container
+- Create personal branches for experiments
+
+| File Type | Naming Convention |
+| --- | --- |
+| Modules / Namespaces	| PascalCase |
+| Types / Structures	| PascalCase |
+| Functions / defs	| lowerCamelCase |
+| Theorems / lemmas	| snake_case |
+| Package folders	| lowercase |
+| Executable entry file |	Main.lean |
+
+
 # Lean 4 Development Environment with DevContainer
 
 [日本語版はこちら / Japanese version](./README.ja.md)
@@ -165,3 +184,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Lean Prover Community](https://leanprover-community.github.io/) for the excellent documentation and tools
 - All contributors to the Lean 4 project
+
