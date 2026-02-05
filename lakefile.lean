@@ -24,5 +24,5 @@ lean_lib Core where
 Executable applications
 -/
 lean_exe app where
-  root := `Main.Main
+  root := `App.Main
   srcDir := "projects/app"
