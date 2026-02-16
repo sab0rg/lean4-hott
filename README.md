@@ -1,5 +1,5 @@
 # Contribution guide #
-- Apps live in projects
+- Your programs live in projects/app
 - Reusable code lives in libraries
 - Apps can import libraries
 - Libraries should not import apps
@@ -14,7 +14,7 @@
 | Functions / defs	| lowerCamelCase |
 | Theorems / lemmas	| snake_case |
 | Package folders	| lowercase |
-| Executable entry file |	Main.lean |
+| Executable files |	PascalCase |
 
 
 # Lean 4 Development Environment with DevContainer
@@ -73,7 +73,7 @@ lake --version
 
 ```bash
 lake build
-lake exe lean4-project
+lake exe app
 ```
 
 You should see the output: `Hello, Lean 4!`
@@ -82,6 +82,17 @@ You should see the output: `Hello, Lean 4!`
 
 ```
 .
+├── projects/
+│   ├── app/                 # Source code for your own programs
+│   │   ├── App/
+│   │   │   ├── DemoMain.lean    # Example Code (see below) + Core.Utils lib import
+│   └── l4s&e                # Source code for "Lean ForeScientists and Engineers" course
+│   │   ├── Lesson2.lean
+├── libraries/
+│   ├── core/                 # Internal libraries
+│   │   ├── Core/
+│   │   │   ├── DemoUtils.lean
+├── docs/
 ├── .devcontainer/
 │   ├── devcontainer.json    # DevContainer configuration
 │   └── Dockerfile            # Docker image definition
@@ -184,5 +195,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Lean Prover Community](https://leanprover-community.github.io/) for the excellent documentation and tools
 - All contributors to the Lean 4 project
+
 
 
