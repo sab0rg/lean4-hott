@@ -23,12 +23,12 @@ lean_lib Core where
 /-
 Executable applications
 -/
-lean_exe app where
+lean_exe demo where
   srcDir := "projects/app"
-  root := `App.Main
+  root := `App.DemoMain
 
 lean_exe lesson2 where
-  srcDir := "projects/app/App"
+  srcDir := "projects/l4s&e"
   root := `Lessons.Lesson2
 
 require "leanprover-community" / "mathlib"

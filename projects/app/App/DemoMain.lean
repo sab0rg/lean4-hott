@@ -1,4 +1,4 @@
-import Core.Utils
+import Core.DemoUtils
 
 def main : IO Unit :=
   IO.println (Core.greet "Lean 4!")
