@@ -41,8 +41,8 @@ A minimal Lean 4 development environment using VSCode DevContainer. This setup p
 1. **Clone this repository**
 
 ```bash
-git clone https://github.com/chantakan/lean4-devcontainer-template.git
-cd lean4-devcontainer-template
+git clone https://github.com/sab0rg/lean4-hott.git
+cd lean4-hott
 ```
 
 2. **Open in VSCode**
@@ -184,4 +184,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Lean Prover Community](https://leanprover-community.github.io/) for the excellent documentation and tools
 - All contributors to the Lean 4 project
+
 
