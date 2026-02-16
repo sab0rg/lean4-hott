@@ -73,7 +73,7 @@ lake --version
 
 ```bash
 lake build
-lake exe app
+lake exe demo
 ```
 
 You should see the output: `Hello, Lean 4!`
@@ -121,7 +121,7 @@ lake build
 ### Run the Executable
 
 ```bash
-lake exe lean4-project
+lake exe demo
 ```
 
 ### Update Dependencies
@@ -195,6 +195,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Lean Prover Community](https://leanprover-community.github.io/) for the excellent documentation and tools
 - All contributors to the Lean 4 project
+
 
 
 
