@@ -19,9 +19,11 @@
 
 # Lean 4 Development Environment with DevContainer
 
-[日本語版はこちら / Japanese version](./README.ja.md)
-
 A minimal Lean 4 development environment using VSCode DevContainer. This setup provides a consistent development environment with Lean 4, making it easy to start theorem proving and functional programming.
+
+**Note:**
+.../projects/l4s&e/ is include `.lean` files from the [Lean for Scientists and Engineers, 2024](https://github.com/ATOMSLab/LFSE2024/tree/master) course. The sub-folder for each lesson also includes related `.lean` exercises from the [Mechanics of a Proof](https://hrmacbeth.github.io/math2001/) and [Functional Programming in Lean](https://lean-lang.org/functional_programming_in_lean/) textbooks, which the course draws heavy inspiration from.
+
 
 ## Features
 
@@ -78,6 +80,17 @@ lake exe demo
 
 You should see the output: `Hello, Lean 4!`
 
+The `DemoMain.lean` file includes:
+- A simple "Hello, Lean 4!" program
+- Proof of commutativity of addition (two approaches)
+- Examples using the `omega` tactic
+
+6. **Cache Pre-compiled Mathlib (and its dependencies)**
+
+```bash
+lake exe cache get
+```
+
 ## Project Structure
 
 ```
@@ -103,12 +116,7 @@ You should see the output: `Hello, Lean 4!`
 └── README.md                # This file
 ```
 
-## Example Code
-
-The `Main.lean` file includes:
-- A simple "Hello, Lean 4!" program
-- Proof of commutativity of addition (two approaches)
-- Examples using the `omega` tactic
+# Tips & Tricks
 
 ## Building and Running
 
@@ -133,6 +141,8 @@ lake update
 ## Customization
 
 ### Change Lean Version
+
+Current version is hard set to `4.28.0-rc1` which also marks the state of Mathlib.
 
 Edit the `lean-toolchain` file to specify a different version:
 

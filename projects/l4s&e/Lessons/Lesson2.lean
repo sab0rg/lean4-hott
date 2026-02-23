@@ -1,5 +1,8 @@
 import Mathlib
 
+def main : IO Unit :=
+  IO.println ("THIS IS MAIN FROM lesson2")
+
 -- A plane flies 450 miles with the wind in 3 hours
 -- Flying back against the wind, the plane takes 5 hours to make the trip
 -- Prove that the plane's speed in still air would be 120 miles/hour

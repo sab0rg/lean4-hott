@@ -31,4 +31,4 @@ lean_exe lesson2 where
   srcDir := "projects/l4s&e"
   root := `Lessons.Lesson2
 
-require "leanprover-community" / "mathlib"
+require "leanprover-community" / "mathlib" @ git "v4.28.0-rc1"
