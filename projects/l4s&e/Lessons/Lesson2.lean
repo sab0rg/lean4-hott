@@ -25,7 +25,7 @@ example {x y : ℝ}
 calc
   x = ((x - y) + (x + y)) / 2 := by ring  -- algebraic rearrangement
   _ = (90 + 150) / 2 := by rw [h1, h2] -- substitution
-  _ = 120 := by ring -- algebraic rearrangement
+  _ = 120 := by norm_num -- numerical simplification
 
 
 /-
@@ -47,25 +47,25 @@ example {v I R : ℝ}
 (h2 : R = 4)
 (h3 : v = I * R) : v = 12 :=
 calc
-v = I * R := by sorry
-_ = 3 * R := by sorry
-_ = 3 * 4 := by sorry
-_ = 12 := by sorry
+v = I * R := by rw [h3]
+_ = 3 * R := by rw [h1]
+_ = 3 * 4 := by rw [h2]
+_ = 12 := by norm_num
 
 -- Example 1.2.1 from MoP
 example {a b : ℚ} (h1 : a - b = 4) (h2 : a * b = 1) : (a + b) ^ 2 = 20 :=
   calc
-    (a + b) ^ 2 = (a - b) ^ 2 + 4 * (a * b) := by sorry -- algebraic rearrangement
-    _ = 4 ^ 2 + 4 * 1 := by sorry -- substitution
-    _ = 20 := by sorry -- simplification
+    (a + b) ^ 2 = (a - b) ^ 2 + 4 * (a * b) := by ring -- algebraic rearrangement
+    _ = 4 ^ 2 + 4 * 1 := by rw [h1, h2] -- substitution
+    _ = 20 := by norm_num -- simplification
 
 -- Example 1.2.2 from MoP
 example {r s : ℝ} (h1 : s = 3) (h2 : r + 2 * s = -1) : r = -7 :=
   calc
-    r = r + 2 * s - 2 * s := by sorry
-    _ = -1 - 2 * s := by sorry
-    _ = -1 - 2 * 3 := by sorry
-    _ = -7 := by sorry
+    r = r + 2 * s - 2 * s := by norm_num
+    _ = -1 - 2 * s := by rw [h2]
+    _ = -1 - 2 * 3 := by rw [h1]
+    _ = -7 := by norm_num
 
 -- rw is "rewrite" - useful for substitution
 -- "algebraic rearrangement" can be accomplished by tactics like simp, ring, linarith, norm_num
@@ -76,15 +76,24 @@ example {a b m n : ℤ} (h1 : a * m + b * n = 1) (h2 : b ^ 2 = 2 * a ^ 2) :
     (2 * a * n + b * m) ^ 2 = 2 :=
   calc
     (2 * a * n + b * m) ^ 2
-      = 2 * (a * m + b * n) ^ 2 + (m ^ 2 - 2 * n ^ 2) * (b ^ 2 - 2 * a ^ 2) := by sorry
-    _ = 2 * 1 ^ 2 + (m ^ 2 - 2 * n ^ 2) * (2 * a ^ 2 - 2 * a ^ 2) := by sorry
-    _ = 2 := by sorry
+    = 2 * (a * m + b * n) ^ 2 + (m ^ 2 - 2 * n ^ 2) * (b ^ 2 - 2 * a ^ 2) := by ring
+    _ = 2 * 1 ^ 2 + (m ^ 2 - 2 * n ^ 2) * (2 * a ^ 2 - 2 * a ^ 2) := by rw [h1, h2]
+    _ = 2 := by norm_num
 
 -- Example 1.2.4 from MoP
 -- No roadmap for you! Can you figure out how to start?
 example {a b c d e f : ℤ} (h1 : a * d = b * c) (h2 : c * f = d * e) :
     d * (a * f - b * e) = 0 :=
-  sorry
+    calc
+    d * (a * f - b * e)
+      = a*d*f - d*b*e := by ring
+    _ = b*c*f - d*b*e := by rw [h1]
+    _ = b*(c*f) - d*b*e := by ring
+    _ = b*(d*e) - d*b*e := by rw [h2]
+    _ = 0 := by ring
+
+
+
 
 -- Inequalities
 
