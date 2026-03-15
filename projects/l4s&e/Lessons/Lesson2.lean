@@ -93,6 +93,28 @@ example {a b c d e f : ℤ} (h1 : a * d = b * c) (h2 : c * f = d * e) :
     _ = 0 := by ring
 
 
+--1.3.1 MoP
+example {a b : ℤ}
+(h1 : a = 2 * b + 5)
+(h2 : b = 3)
+: a = 11 :=
+calc
+a = 2 * b + 5 := by rw [h1]
+_ = 2 * 3 + 5 := by rw [h2]
+_ = 11 := by ring
+
+--1.3.2 MoP
+example {x : ℤ}
+(h1 : x + 4 = 2)
+: x = -2 :=
+calc
+x = (x + 4) - 4 := by ring
+_ = 2 - 4 := by rw[h1]
+_ = -2 := by ring
+
+--1.3.3 MoP
+example {~{@:{}@>+_)(I)((&^&^*$%$"$!"!¬¬!`12))}}
+
 
 
 -- Inequalities
